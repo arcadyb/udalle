@@ -1,7 +1,7 @@
 import "@styles/globals.css";
 
-// import Nav from "@components/Nav";
-// import Provider from "@components/Provider";
+import Nav from "@components/Nav";
+import Provider from "@components/Provider";
 
 export const metadata = {
   title: "UDalle",
@@ -11,16 +11,16 @@ export const metadata = {
 const RootLayout = ({ children }) => (
   <html lang='en'>
     <body>
-      {/* <Provider> */}
+      <Provider>
         <div className='main'>
           <div className='gradient' />
         </div>
 
         <main className='app'>
-          {/* <Nav /> */}
+          <Nav /> 
           {children}
         </main>
-      {/* </Provider> */}
+      </Provider> 
     </body>
   </html>
 );
