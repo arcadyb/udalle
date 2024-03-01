@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+--generate nextauth secret https://generate-secret.vercel.app/32
+--google auth ffix redirect usrl
+Error 400: redirect_uri_mismatch
+
+You can't sign in to this app because it doesn't comply with Google's OAuth 2.0 policy.
+
+If you're the app developer, register the redirect URI in the Google Cloud Console.
+Request details: redirect_uri=http://localhost:3000/api/auth/callback/google
+Related developer documentation
