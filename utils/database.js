@@ -12,7 +12,7 @@ export const connectToDB = async () => {
 
   try {
     await mongoose.connect(process.env.MONGODB_URI, {
-      dbName: "share_prompt",
+      dbName: "udalle",
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
@@ -21,6 +21,6 @@ export const connectToDB = async () => {
 
     console.log('MongoDB connected')
   } catch (error) {
-    console.log(error);
+    console.log("connectToDB" + error);
   }
 }

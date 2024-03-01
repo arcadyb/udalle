@@ -24,8 +24,9 @@ const handler = NextAuth({
       return session;
     },
     async signIn({ account, profile, user, credentials }) {
-      c
+      console.log("signIn")
       try {
+        console.log("connectToDB")
         await connectToDB();
 
         // check if user already exists
