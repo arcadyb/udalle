@@ -12,9 +12,13 @@ const PromptSchema = new Schema({
   tag: {
     type: String,
     required: [true, 'Tag is required.'],
+  },
+  nick: {
+    type: String,
+    required: [true, 'Nick is required.'],
   }
-});
+}, { strict: false });
 
 const Prompt = models.Prompt || model('Prompt', PromptSchema);
-
+model('Prompt').schema.add({nick: String});
 export default Prompt;

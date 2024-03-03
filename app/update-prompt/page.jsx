@@ -21,6 +21,7 @@ const UpdatePrompt = () => {
       setPost({
         prompt: data.prompt,
         tag: data.tag,
+        nick: data.nick,
       });
     };
 
@@ -39,6 +40,7 @@ const UpdatePrompt = () => {
         body: JSON.stringify({
           prompt: post.prompt,
           tag: post.tag,
+          nick: post.nick,
         }),
       });
 
