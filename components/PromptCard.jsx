@@ -40,15 +40,25 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
             height={40}
             className='rounded-full object-contain'
           />
+{pathName === "/"||session?.user.id !== post.creator._id ?(
+         <div className='flex flex-col'>
+         <h3 className='font-satoshi font-semibold text-gray-900'>
+           {post.nick}
+         </h3>
 
-          <div className='flex flex-col'>
-            <h3 className='font-satoshi font-semibold text-gray-900'>
-              {post.creator.username}
-            </h3>
-            <p className='font-inter text-sm text-gray-500'>
-              {post.creator.email}
-            </p>
-          </div>
+       </div>
+):(
+  <div className='flex flex-col'>
+  <h3 className='font-satoshi font-semibold text-gray-900'>
+    {post.creator.username}
+  </h3>
+  {/* <p className='font-inter text-sm text-gray-500'>
+    {post.creator.email}
+  </p> */}
+</div>
+)
+}
+ 
         </div>
 
         <div className='copy_btn' onClick={handleCopy}>
