@@ -43,7 +43,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
 {pathName === "/"||session?.user.id !== post.creator._id ?(
          <div className='flex flex-col'>
          <h3 className='font-satoshi font-semibold text-gray-900'>
-           Creator:{post.nick}
+           Creator : {post.nick}
          </h3>
 
        </div>
