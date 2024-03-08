@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Suspense } from 'react';
 
 import PromptCard from "./PromptCard";
 
@@ -87,7 +88,10 @@ const Feed = () => {
           handleTagClick={handleTagClick}
         />
       ) : (
-        <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
+        <Suspense fallback={<div>Loading...</div>}>
+         <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
+      </Suspense>
+       
       )}
     </section>
   );
