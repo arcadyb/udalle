@@ -6,6 +6,7 @@ import { Suspense } from 'react';
 import PromptCard from "./PromptCard";
 
 const PromptCardList = ({ data, handleTagClick }) => {
+  
   return (
     data?.length !== null &&  data?.length > 0 ?(
     <div className='mt-16 prompt_layout'>
@@ -17,7 +18,11 @@ const PromptCardList = ({ data, handleTagClick }) => {
         />
       ))}
     </div>):
-    (<div>Loading...</div>)
+    (
+      <div>Loading...</div>
+      
+    )
+
   );
 };
 
@@ -37,11 +42,11 @@ const Feed = () => {
      setAllPosts(data);
    } catch (error) {
     console.log(error)
-    setTimeout(() => {fetchPosts()},500)
+      await fetchPosts()
    }
   };
 
-  useEffect(() => {
+  useEffect( () => {
     fetchPosts();
   }, []);
 
@@ -76,6 +81,7 @@ const Feed = () => {
   };
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <section className='feed'>
       <form className='relative w-full flex-center'>
         <input
@@ -95,12 +101,13 @@ const Feed = () => {
           handleTagClick={handleTagClick}
         />
       ) : (
-        <Suspense fallback={<div>Loading...</div>}>
+     
          <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
-        </Suspense>
+
        
       )}
     </section>
+    </Suspense>
   );
 };
 
