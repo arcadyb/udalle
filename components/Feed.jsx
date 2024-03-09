@@ -35,6 +35,7 @@ const Feed = () => {
      setAllPosts(data);
    } catch (error) {
     console.log(error)
+    setTimeout(() => {fetchPosts()},500)
    }
   };
 
