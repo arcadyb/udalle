@@ -42,7 +42,13 @@ const Feed = () => {
      setAllPosts(data);
    } catch (error) {
     console.log(error)
-      await fetchPosts()
+    setTimeout(async () => {
+      const response = await fetch("/api/prompt");
+      const data = await response.json();
+      console.log("fetch on timeout")
+      setAllPosts(data);
+    }, 500)
+     
    }
   };
 
