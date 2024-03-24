@@ -36,18 +36,20 @@ const Feed = () => {
 
   const fetchPosts = async () => {
    try {
+    console.log("tryfetch")
      const response = await fetch("/api/prompt");
+     console.log("response:"+response)
      const data = await response.json();
  
      setAllPosts(data);
    } catch (error) {
     console.log(error)
-    setTimeout(async () => {
+
       const response = await fetch("/api/prompt");
       const data = await response.json();
       console.log("fetch on timeout")
       setAllPosts(data);
-    }, 500)
+  
      
    }
   };
